@@ -1,5 +1,5 @@
 # Project Euler
-A list of my solutions to ProjectEuler.net problems written in Rust.
+A list of my solutions to [**Project Euler**](https://projecteuler.net/) problems written in Rust.
 
 # Setup
 1. Make sure you have installed [**Rust**](https://www.rust-lang.org/tools/install/), & [**Cargo**](https://doc.rust-lang.org/cargo/getting-started/installation.html).
