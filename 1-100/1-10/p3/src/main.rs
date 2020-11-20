@@ -9,7 +9,7 @@ fn main() {
     let n: i64 = 600851475143;
     let mut i: i64 = 1;
 
-    loop {
+    while i <= (n / 2) {
         i += 1;
         let factor: f64 = (n as f64) / (i as f64);
         
@@ -18,10 +18,6 @@ fn main() {
                 println!("{}", factor);
                 break;
             }
-        }
-
-        if i > (n / 2) {
-            break;
         }
     }
 }
