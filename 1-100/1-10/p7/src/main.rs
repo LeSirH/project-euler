@@ -5,19 +5,23 @@
 
 */
 
+use std::time::Instant;
+
 fn main() {
+    let before = Instant::now();
     let mut prime_count: i16 = 1;
     let mut n = 3;
-
+    
     while prime_count < 10001 {
         if is_prime(n) {
             prime_count += 1;
         }
-
+        
         n += 2;
     }
-
+    
     println!("{}", n - 1);
+    println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
 fn is_prime(n: i64) -> bool {
