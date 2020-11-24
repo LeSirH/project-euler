@@ -5,7 +5,10 @@
 
 */
 
+use std::time::Instant;
+
 fn main() {
+    let before = Instant::now();
     let mut max_product = 0;
     
     for i in (100..999).rev() {
@@ -17,8 +20,9 @@ fn main() {
             }
         }
     }
-
+    
     println!("{}", max_product);
+    println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
 fn is_palindrome(n: i64) -> bool {

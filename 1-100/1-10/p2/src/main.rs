@@ -8,8 +8,10 @@
 
 */
 
+use std::time::Instant;
 
 fn main() {
+    let before = Instant::now();
     let mut sum: i32 = 0;
     let mut current_value = 1;
     let mut previous_value = 0;
@@ -31,4 +33,5 @@ fn main() {
     }
 
     println!("{}", sum);
+    println!("Elapsed time: {:.2?}", before.elapsed());
 }

@@ -5,7 +5,11 @@
 
 */
 
+use std::time::Instant;
+
 fn main() {
+    let before = Instant::now();
+
     // I had originally attempted using i16.
     let mut sum: i32 = 0;
 
@@ -16,4 +20,5 @@ fn main() {
     }
 
     println!("{}", sum);
+    println!("Elapsed time: {:.2?}", before.elapsed());
 }

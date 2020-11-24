@@ -5,7 +5,10 @@
 
 */
 
+use std::time::Instant;
+
 fn main() {
+    let before = Instant::now();
     let mut n = 2520;
     let nums = [
         1, 2, 3, 4, 5, 
@@ -13,7 +16,7 @@ fn main() {
         11, 12, 13, 14, 15, 
         16, 17, 18, 19, 20
     ];
-    
+        
     loop {
         if (n % 2 == 0) & (n % 3 == 0) & deep_check(n, nums) {
             println!("{}", n);
@@ -22,6 +25,8 @@ fn main() {
         
         n += 2520;
     }
+
+    println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
 fn deep_check(n: i64, nums: [i64; 20]) -> bool {
