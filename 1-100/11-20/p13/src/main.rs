@@ -18,6 +18,6 @@ fn main() {
         * Join the total into a string after total is calculated
     */
 
-    println!("{}", total);
+    println!("Answer: {}", total);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }

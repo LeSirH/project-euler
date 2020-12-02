@@ -6,6 +6,8 @@
 */
 
 fn main() {
+    println!("\nQ: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.\nFind the sum of all the primes below two million.\n");
+
     use std::time::Instant;
     let before = Instant::now();
 
@@ -27,7 +29,7 @@ fn main() {
         sum += prime;
     }
 
-    println!("{}", sum);
+    println!("Answer: {}", sum);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 

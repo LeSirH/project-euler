@@ -8,6 +8,8 @@
 use std::time::Instant;
 
 fn main() {
+    println!("\nQ: A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.\nFind the largest palindrome made from the product of two 3-digit numbers.\n");
+
     let before = Instant::now();
     let mut max_product = 0;
     
@@ -21,7 +23,7 @@ fn main() {
         }
     }
     
-    println!("{}", max_product);
+    println!("Answer: {}", max_product);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 

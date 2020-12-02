@@ -8,6 +8,8 @@
 use std::time::Instant;
 
 fn main() {
+    println!("\nQ: 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\nWhat is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?\n");
+
     let before = Instant::now();
     let mut n = 2520;
     let nums = [
@@ -19,7 +21,7 @@ fn main() {
         
     loop {
         if (n % 2 == 0) & (n % 3 == 0) & deep_check(n, nums) {
-            println!("{}", n);
+            println!("Answer: {}", n);
             break;
         }
         

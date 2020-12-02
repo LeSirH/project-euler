@@ -1,13 +1,15 @@
 /*
 
     The prime factors of 13195 are 5, 7, 13 and 29.
-    What is the largest prime factor of the number 600851475143 ?
+    What is the largest prime factor of the number 600851475143?
 
 */
 
 use std::time::Instant;
 
 fn main() {
+    println!("\nQ: The prime factors of 13195 are 5, 7, 13 and 29.\nWhat is the largest prime factor of the number 600851475143?\n");
+
     let before = Instant::now();
     let n: i64 = 600851475143;
     let mut i: i64 = 1;
@@ -18,7 +20,7 @@ fn main() {
         
         if factor.fract() == 0.0 {
             if is_prime(factor) {
-                println!("{}", factor);
+                println!("Answer: {}", factor);
                 break;
             }
         }

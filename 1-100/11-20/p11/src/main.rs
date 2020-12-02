@@ -32,6 +32,6 @@ fn main() {
     let before = Instant::now();
 
     // Solved by hand... 
-    println!("{}", 87 * 97 * 94 * 89);
+    println!("Answer: {}", 87 * 97 * 94 * 89);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
