@@ -2,7 +2,7 @@
 A list of my solutions to [**Project Euler**](https://projecteuler.net/) problems written in Rust.
 
 # Setup
-1. Make sure you have installed [**Rust**](https://www.rust-lang.org/tools/install/), & [**Cargo**](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+1. Make sure you have installed [**Rust**](https://www.rust-lang.org/tools/install/) & [**Cargo**](https://doc.rust-lang.org/cargo/getting-started/installation.html).
 2. Clone the repository.
 ```bash
 $ git clone git@github.com:Le-SirH/project-euler.git
