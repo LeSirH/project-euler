@@ -4,10 +4,11 @@
 
 */
 
+use std::time::Instant;
+
 fn main() {
     println!("\nQ: { Problem Instructions }\n");
 
-    use std::time::Instant;
     let before = Instant::now();
 
     // solve

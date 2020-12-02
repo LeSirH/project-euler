@@ -31,11 +31,15 @@ fn is_prime(n: i64) -> bool {
         return false;
     }
 
-    for i in 2..n {
+    if n % 2 == 0 {
+        return n == 2;
+    }
+    
+    for i in 2..((n as f64).sqrt() as i64 + 1) {
         if n % i == 0 {
             return false;
         }
     }
-
+    
     return true;
 }
