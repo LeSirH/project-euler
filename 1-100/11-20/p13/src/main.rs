@@ -6,18 +6,32 @@
 
 */
 
+use std::time::Instant;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
+
 fn main() {
-    use std::time::Instant;
     let before = Instant::now();
-    let mut total = 0;
 
-    /*
-        * Read number from number.txt
-        * Split the total into an array of digits
-        * For each 50-digit number, get each digit, and while counting the digit place, add it to the correct digit in the total array. If the total exceeds 10, add to the previous element in the list.
-        * Join the total into a string after total is calculated
-    */
+    let filename = "src/number.txt";
+    let file = File::open(filename).unwrap();
+    let reader = BufReader::new(file);
+    let mut total: u128 = 0;
 
-    println!("Answer: {}", total);
+    for (i, line) in reader.lines().enumerate() {
+        let line = line.unwrap();
+        let chopped = &line[0..35];
+        let n: u128 = chopped.parse::<u128>().unwrap();
+        
+        total += n;
+    }
+
+    let mut answer = total.to_string();
+
+    if answer.len() > 10 {
+        answer = String::from(answer)[0..10].to_string();
+    }
+
+    println!("Answer: {}", answer);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }

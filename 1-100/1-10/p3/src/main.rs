@@ -19,7 +19,7 @@ fn main() {
         let factor: f64 = (n as f64) / (i as f64);
         
         if factor.fract() == 0.0 {
-            if is_prime(factor) {
+            if is_prime(factor as i64) {
                 println!("Answer: {}", factor);
                 break;
             }
@@ -29,16 +29,20 @@ fn main() {
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
-fn is_prime(n: f64) -> bool {
-    if n < 2f64 {
+fn is_prime(n: i64) -> bool {
+    if n < 2 {
         return false;
     }
 
-    for i in 2..(n.sqrt() as i64) {
-        if (n as i64) % i == 0 {
+    if n % 2 == 0 {
+        return n == 2;
+    }
+    
+    for i in 2..((n as f64).sqrt() as i64 + 1) {
+        if n % i == 0 {
             return false;
         }
     }
-
+    
     return true;
 }
