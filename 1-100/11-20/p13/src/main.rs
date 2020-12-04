@@ -18,7 +18,7 @@ fn main() {
     let reader = BufReader::new(file);
     let mut total: u128 = 0;
 
-    for (i, line) in reader.lines().enumerate() {
+    for line in reader.lines() {
         let line = line.unwrap();
         let chopped = &line[0..35];
         let n: u128 = chopped.parse::<u128>().unwrap();
