@@ -15,10 +15,7 @@ fn main() {
 
     let before = Instant::now();
 
-    // solve
     println!("Answer: {}", middle(pascal_triangle(40)));
-
-    println!("Answer: ");
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
