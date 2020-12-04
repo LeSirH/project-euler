@@ -13,6 +13,6 @@ fn main() {
 
     // solve
 
-    println("Answer: ");
+    println!("Answer: ");
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
