@@ -2,7 +2,7 @@
 A list of my solutions to [**Project Euler**](https://projecteuler.net/) problems written in Rust.
 
 # Setup
-1. Make sure you have installed [**Rust**](https://www.rust-lang.org/tools/install/), & [**Cargo**](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+1. Make sure you have installed [**Rust**](https://www.rust-lang.org/tools/install/) & [**Cargo**](https://doc.rust-lang.org/cargo/getting-started/installation.html).
 2. Clone the repository.
 ```bash
 $ git clone git@github.com:Le-SirH/project-euler.git
@@ -17,7 +17,15 @@ $ cd 1-100/1-10/p1
 $ cargo run
 ```
 
+<hr>
+
+For every 10 problems, there is a `solve.sh` file that you can run to solve those 10 problems at once.
+```bash
+cd 1-100/1-10
+sh solve.sh
+```
+
 # Resources
-If you would like to start learning Rust here are some resources for getting started:
+If you would like to start learning Rust, here are some resources for getting started:
 * [**Installation**](https://www.rust-lang.org/tools/install/)
 * [**Free Rust Book**](https://doc.rust-lang.org/book/)
