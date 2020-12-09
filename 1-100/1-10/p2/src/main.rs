@@ -17,14 +17,11 @@ fn main() {
     let mut sum: i32 = 0;
     let mut current_value = 1;
     let mut previous_value = 0;
+    let mut new_value = 0;
 
-    loop {
+    while new_value > 4000000 {
         let temp_current_value = current_value;
-        let new_value = current_value + previous_value;
-
-        if new_value > 4000000 {
-            break;
-        }
+        new_value = current_value + previous_value;
 
         if (current_value + previous_value) % 2 == 0 {
             sum += new_value;
