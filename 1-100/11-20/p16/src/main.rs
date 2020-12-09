@@ -2,7 +2,7 @@
 
     215 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 
-    What is the sum of the digits of the number 21000?    
+    What is the sum of the digits of the number 2^1000?    
 
 */
 
@@ -21,7 +21,7 @@ fn main() {
             let x = carry + digits[i] * 2;
             carry = 0;
 
-            if x > 9 && i != 0{
+            if x > 9 && i != 0 {
                 digits[i] = x % 10;
                 carry = x / 10;
             } 
