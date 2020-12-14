@@ -1,6 +1,6 @@
 /*
 
-    { Problem Instructions }
+    [Instructions]
 
 */
 
@@ -21,5 +21,5 @@ fn solve() -> u8 {
 }
 
 fn display_instructions() {
-    println!("\nQ: { Problem Instructions }");
+    println!("\nQ: [Instructions]");
 }
