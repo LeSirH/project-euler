@@ -2,6 +2,8 @@
 
     [Instructions]
 
+    Link: https://projecteuler.net/problem=n
+
 */
 
 use std::time::Instant;
@@ -21,5 +23,6 @@ fn solve() -> u8 {
 }
 
 fn display_instructions() {
-    println!("\nQ: [Instructions]");
+    println!("\n#n: [Instructions]");
+    println!("Link: https://projecteuler.net/problem=n");
 }
