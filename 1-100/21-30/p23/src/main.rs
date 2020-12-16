@@ -13,35 +13,97 @@ fn main() {
     display_instructions();
 
     let before = Instant::now();
-    let solution: u8 = solve();
+    let solution: i32 = solve();
 
     println!("Answer: {}", solution);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
-fn solve() -> u8 {
-    let solutions: Vec<i32> = vec![];
-    
-    /*
-        For the numbers from 12 to 28123:
-        * Get all abundant numbers
-        
-        For each number from 24 to 28123 again:
-        * Check if the number divided by 2 is an abundant number if the number is even
-        * Check all other possibilities of being a sum of 2 abundant numbers
-            * This means excluding abundant numbers greater than (n/2).ceil()
-    */
-    
-    0
+fn solve() -> i32 {
+    let mut sum = 0;
+    let abundant_nums: Vec<i32> = find_abundants();
+
+    // Check if n cannot be written as the sum of two abundant numbers
+    for n in 1..20162 {
+        if (n % 2 == 0) & is_abundant(n / 2) {
+            continue;
+        }
+ 
+        // Get a list of all abundant numbers below n
+        let mut small_abundants: Vec<i32> = vec![];
+        for j in &abundant_nums {
+            if (j > &n) | (j == &n) {
+                break;
+            }
+
+            small_abundants.push(*j);
+        }
+
+        // Check if any possible sum of abundants equals n
+        let mut _solved = false;
+        for i in &small_abundants {
+            if _solved == true {
+                break;
+            }
+
+            for j in &small_abundants {
+                if i == j {
+                    continue;
+                }
+
+                if i + j == n {
+                    _solved = true;
+                    break;
+                }
+            }
+        }
+
+        if _solved == false {
+            sum += n;
+        }
+    }
+
+    sum
+}
+
+fn find_abundants() -> Vec<i32> {
+    let mut abundant_nums: Vec<i32> = vec![];
+
+    // Get a list of all abundant numbers.
+    for i in 12..28124 {
+        if is_abundant(i) {
+            abundant_nums.push(i);
+        }
+    }
+
+    abundant_nums
+}
+
+fn divisors(n: i32) -> Vec<i32> {
+    let mut divisors: Vec<i32> = vec![];
+
+    if n == 1 {
+        return vec![1];
+    }
+
+    for i in 1..((n / 2) + 1) {
+        if n % i == 0 {
+            divisors.push(i);
+        }
+    }
+
+    divisors
 }
 
 fn is_abundant(n: i32) -> bool {
-    /*
-        get all the divisors
-        sum the divisors
-        if the sum is greater than n, return true
-        else return false
-    */
+    let divisors: Vec<i32> = divisors(n);
+    let divisor_sum: i32 = divisors.iter().sum();
+
+    // println!("N={}, S={} {}", n, divisor_sum, (divisor_sum > n));
+
+    if divisor_sum > n {
+        return true;
+    }
 
     false
 }
