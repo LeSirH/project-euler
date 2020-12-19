@@ -12,9 +12,9 @@ fn main() {
     let before = Instant::now();
 
     // I had originally attempted using i16.
-    let mut sum: i32 = 0;
+    let mut sum: u32 = 23;
 
-    for value in 0..1000 {
+    for value in 10..1000 {
         if (value % 3 == 0) || (value % 5 == 0) {
             sum += value;
         }
