@@ -24,5 +24,5 @@ fn solve() -> u8 {
 
 fn display_instructions() {
     println!("\n#n: [Instructions]");
-    println!("Link: https://projecteuler.net/problem=n");
+    println!("\nLink: https://projecteuler.net/problem=n\n");
 }
