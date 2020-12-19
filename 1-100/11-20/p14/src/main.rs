@@ -30,7 +30,6 @@ fn main() {
 
         if seq > largest {
             largest = seq;
-            println!("Solves: {}", start);
         }
 
         start -= 2;
