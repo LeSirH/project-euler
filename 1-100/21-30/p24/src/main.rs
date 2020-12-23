@@ -16,21 +16,18 @@ fn main() {
     display_instructions();
 
     let before = Instant::now();
-    let solution: u8 = solve();
+    let solution: String = solve();
 
     println!("Answer: {}", solution);
     println!("Elapsed time: {:.2?}", before.elapsed());
 }
 
-fn solve() -> u8 {
-    let digits: Vec<usize> = (0..5).collect();
+fn solve() -> String {
+    let digits: Vec<usize> = (0..10).collect();
     let permutations: Vec<String> = gen_permutations(&digits);
+    let one_millionth_perm: &String = &permutations[999999];
 
-    for p in permutations {
-        print!("{}, ", p);
-    }
-
-    0
+    return one_millionth_perm.clone();
 }
 
 fn gen_permutations(nums: &Vec<usize>) -> Vec<String> {    
@@ -45,17 +42,13 @@ fn gen_permutations(nums: &Vec<usize>) -> Vec<String> {
 
     for (i, _) in nums.iter().enumerate() {
         let mut temp_nums: Vec<usize> = nums.clone();
-        
-        temp_nums.remove(i);
+        let temp_num = temp_nums.remove(i);
 
         let temp_permutations = gen_permutations(&temp_nums);
-        println!("Permutations for {:?}: i={}, {:?}", temp_nums, i, temp_permutations);
         for n in temp_permutations {
-            permutations.push(format!("{}{}", i, n));
+            permutations.push(format!("{}{}", temp_num, n));
         }
     }
-
-    println!("{:?}", permutations);
 
     return permutations;
 }
