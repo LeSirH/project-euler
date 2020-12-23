@@ -4,6 +4,8 @@
 
     ...
 
+    Run time: 4.80ms
+
 */
 
 use std::time::Instant;

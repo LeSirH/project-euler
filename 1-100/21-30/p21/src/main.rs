@@ -7,6 +7,8 @@
 
     Evaluate the sum of all the amicable numbers under 10000.
 
+    Run time: 2.16s
+
 */
 
 use std::time::Instant;

@@ -6,6 +6,8 @@
 
     How many such routes are there through a 20×20 grid?
 
+    Run time: 1.65ms
+
 */
 
 use std::time::Instant;

@@ -7,6 +7,8 @@
 
     Find the sum of the digits in the number 100!
 
+    Run time: 11.02ms
+
 */
 
 extern crate num_bigint;

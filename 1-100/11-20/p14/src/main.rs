@@ -14,6 +14,8 @@
 
     NOTE: Once the chain starts the terms are allowed to go above one million.
 
+    Run time: 4.66s
+
 */
 
 use std::time::Instant;

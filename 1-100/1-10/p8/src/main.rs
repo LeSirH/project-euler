@@ -25,6 +25,8 @@
 
     Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
+    Run time: 16.27ms
+
 */
 
 use std;
