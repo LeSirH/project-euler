@@ -3,6 +3,7 @@
     [Instructions]
 
     Link: https://projecteuler.net/problem=n
+    Run time: 
 
 */
 
