@@ -9,8 +9,26 @@
 
 use std::time::Instant;
 
+struct Solver {
+    start_time: Instant
+}
+
+impl Solver {
+    pub fn new(&self) -> Solver {
+        Solver {
+            start_time: Instant::now()
+        }
+    }
+
+    pub fn display_instructions() {
+        println!("\n#n: [Instructions]");
+        println!("\nLink: https://projecteuler.net/problem=n\n");
+    }
+}
+
 fn main() {
-    display_instructions();
+    let solver = Solver::new();
+    solver.display_instructions();
 
     let before = Instant::now();
     let solution: u8 = solve();
@@ -21,9 +39,4 @@ fn main() {
 
 fn solve() -> u8 {
     0
-}
-
-fn display_instructions() {
-    println!("\n#n: [Instructions]");
-    println!("\nLink: https://projecteuler.net/problem=n\n");
 }
