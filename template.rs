@@ -10,19 +10,21 @@
 use std::time::Instant;
 
 struct Solver {
-    start_time: Instant
+    start_time: Instant,
+    problem_num: u8
 }
 
 impl Solver {
     pub fn new() -> Solver {
         Solver {
-            start_time: Instant::now()
+            start_time: Instant::now(),
+            problem_num: 0 // Update to current problem #
         }
     }
 
     pub fn display_instructions(&self) {
-        println!("\n#n: [Instructions]");
-        println!("\nLink: https://projecteuler.net/problem=n\n");
+        println!("\n#{}: [Instructions]", self.problem_num);
+        println!("\nLink: https://projecteuler.net/problem={}\n", self.problem_num);
     }
 }
 
