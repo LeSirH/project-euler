@@ -9,6 +9,7 @@
 
 use std::time::Instant;
 
+#[derive(Copy, Clone)]
 struct Solver {
     start_time: Instant,
     problem_num: u8
@@ -26,17 +27,21 @@ impl Solver {
         println!("\n#{}: [Instructions]", self.problem_num);
         println!("\nLink: https://projecteuler.net/problem={}\n", self.problem_num);
     }
+
+    pub fn start_timer(mut self) {
+        self.start_time = Instant::now();
+    }
 }
 
 fn main() {
     let solver = Solver::new();
     solver.display_instructions();
+    solver.start_timer();
 
-    let before = Instant::now();
-    let solution: u8 = solve();
+    let solution = solve();
 
     println!("Answer: {}", solution);
-    println!("Elapsed time: {:.2?}", before.elapsed());
+    println!("Elapsed time: {:.2?}", solver.start_time.elapsed());
 }
 
 fn solve() -> u8 {
